@@ -1,0 +1,59 @@
+{
+  "name": "india-working-days",
+  "version": "1.0.0",
+  "description": "Indian bank working-day calculator: 2nd/4th Saturday rule, holidays by state, next working day, T+N settlement dates, EMI due-date adjustment. Zero dependencies.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "test": "npm run build && node --test test/index.test.js",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "india",
+    "bank",
+    "holidays",
+    "working-days",
+    "business-days",
+    "rbi",
+    "second-saturday",
+    "fourth-saturday",
+    "settlement",
+    "emi",
+    "fintech",
+    "calendar"
+  ],
+  "author": "Smriti",
+  "license": "MIT",
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smritiazm123/india-working-days.git"
+  },
+  "homepage": "https://github.com/smritiazm123/india-working-days#readme",
+  "bugs": "https://github.com/smritiazm123/india-working-days/issues",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}
